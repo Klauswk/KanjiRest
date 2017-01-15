@@ -1,0 +1,37 @@
+{
+  "name": "kanjirest",
+  "version": "1.0.0",
+  "description": "An webservice based on Oxford kanji database",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Klauswk/KanjiRest.git"
+  },
+  "keywords": [
+    "kanji",
+    "webservice",
+    "oxford",
+    "japanese",
+    "node"
+  ],
+  "author": "Klaus Klein",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Klauswk/KanjiRest/issues"
+  },
+  "homepage": "https://github.com/Klauswk/KanjiRest#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "mongodb": "^2.2.21"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "grunt": "^1.0.1",
+    "mocha": "^3.2.0"
+  }
+}
