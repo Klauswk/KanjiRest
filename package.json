@@ -4,7 +4,8 @@
   "description": "An webservice based on Oxford kanji database",
   "main": "app.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha" ,
+	"start": "node app.js"
   },
   "repository": {
     "type": "git",
