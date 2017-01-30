@@ -15,7 +15,7 @@ describe('Kanji Route Test', function () {
             .end(function (err, res) {
                 if (err) throw err;
             
-                expect(res.text).equal("Server Running!");
+                expect(res.text).equal("Server Running");
                 done();
             });
     });
