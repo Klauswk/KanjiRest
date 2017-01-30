@@ -14,7 +14,6 @@ module.exports = function (app) {
     app.use(bodyParser.json({ type: 'application/json' }));
 
     app.use(function (req, res, next) {
-        console.log('Requesting url: ' + req.url);
         next();
     });
 
