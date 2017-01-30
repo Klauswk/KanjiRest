@@ -4,8 +4,8 @@
   "description": "An webservice based on Oxford kanji database",
   "main": "app.js",
   "scripts": {
-    "test": "mocha" ,
-	"start": "node app.js"
+    "test": "mocha --recursive",
+    "start": "node app/app.js"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
   "devDependencies": {
     "expect.js": "^0.3.1",
     "grunt": "^1.0.1",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "supertest": "^3.0.0"
   }
 }
