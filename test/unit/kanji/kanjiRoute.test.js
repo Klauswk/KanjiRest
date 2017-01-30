@@ -2,7 +2,7 @@
 
 let express = require('express');
 let app = express();
-require("./../../app/server")(app);
+require("./../../../app/server")(app);
 let request = require('supertest');
 let expect = require('expect.js');
 

@@ -5,6 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "mocha --recursive",
+    "test:unit": "mocha --recursive test/unit",
+    "test:int": "mocha --recursive test/integration",
     "start": "node app/app.js"
   },
   "repository": {
