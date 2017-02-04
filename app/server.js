@@ -9,6 +9,10 @@ module.exports = function (app) {
                 let express = require('express');
                 app = express();
             }
+            app.use(function (req, res, next) {
+                console.log("Asking for the endpoint: " + req.url);
+                next();
+            });
 
             let bodyParser = require('body-parser')
             require('./kanji/kanjiRoute')(app);
@@ -17,9 +21,7 @@ module.exports = function (app) {
             app.use(bodyParser.text());
             app.use(bodyParser.json({ type: 'application/json' }));
 
-            app.use(function (req, res, next) {
-                next();
-            });
+
 
             app.get('/', function (req, res) {
                 res.send('Server Running');
@@ -27,7 +29,7 @@ module.exports = function (app) {
 
 
             let server = app.listen(process.env.PORT || 8888, function () {
-                console.log('Server working properly on ' + (process.env.PORT || 8888));
+                //console.log('Server working properly on ' + (process.env.PORT || 8888));
             });
 
             resolve(server);
