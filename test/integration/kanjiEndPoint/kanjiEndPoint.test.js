@@ -21,7 +21,7 @@ describe('Kanji Route Test', function () {
 
     it('Empty result with inexistent id', function (done) {
         request(app)
-            .get('/kanji/id/9999')
+            .get('/api/kanji/id/9999')
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(200)
             .end(function (err, res) {
@@ -35,7 +35,7 @@ describe('Kanji Route Test', function () {
 
     it('Request error if id is not a number', function (done) {
         request(app)
-            .get('/kanji/id/NOT_A_NUMBER')
+            .get('/api/kanji/id/NOT_A_NUMBER')
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(400)
             .end(function (err, res) {
@@ -49,7 +49,7 @@ describe('Kanji Route Test', function () {
 
     it('Return kanji with id 2', function (done) {
         request(app)
-            .get('/kanji/id/2')
+            .get('/api/kanji/id/2')
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(200)
             .end(function (err, res) {
@@ -63,7 +63,7 @@ describe('Kanji Route Test', function () {
 
     it('inexistent word must return empty array', function (done) {
         request(app)
-            .get('/kanji/translation/NOT_A_TRUE_WORD')
+            .get('/api/kanji/translation/NOT_A_TRUE_WORD')
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(200)
             .end(function (err, res) {
@@ -77,7 +77,7 @@ describe('Kanji Route Test', function () {
 
     it('All results must contain "love" in translation', function (done) {
         request(app)
-            .get('/kanji/translation/love')
+            .get('/api/kanji/translation/love')
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(200)
             .end(function (err, res) {
@@ -94,7 +94,7 @@ describe('Kanji Route Test', function () {
 
     it('All results must contain "13" strokes', function (done) {
         request(app)
-            .get('/kanji/stroke/13')
+            .get('/api/kanji/stroke/13')
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(200)
             .end(function (err, res) {
@@ -111,7 +111,7 @@ describe('Kanji Route Test', function () {
 
     it('Stroke endpoint shouldn\'t accept characters', function (done) {
         request(app)
-            .get('/kanji/stroke/oie')
+            .get('/api/kanji/stroke/oie')
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(400)
             .end(function (err, res) {
@@ -125,7 +125,7 @@ describe('Kanji Route Test', function () {
 
     it('All results must be grade 2', function (done) {
         request(app)
-            .get('/kanji/grade/1')
+            .get('/api/kanji/grade/1')
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(200)
             .end(function (err, res) {
@@ -142,7 +142,7 @@ describe('Kanji Route Test', function () {
 
     it('Grade endpoint shouldn\'t accept characters', function (done) {
         request(app)
-            .get('/kanji/grade/oie')
+            .get('/api/kanji/grade/oie')
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(400)
             .end(function (err, res) {
@@ -156,7 +156,7 @@ describe('Kanji Route Test', function () {
 
     /*it('The returned kanji must match the input', function (done) {
         request(app)
-            .get("/kanji/kanji/愛")
+            .get("/api/kanji/kanji/愛")
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(200)
             .end(function (err, res) {
@@ -172,7 +172,7 @@ describe('Kanji Route Test', function () {
 
     it('Kanji endpoint shouldn\'t accept numbers', function (done) {
         request(app)
-            .get('/kanji/kanji/123456')
+            .get('/api/kanji/kanji/123456')
             .expect('Content-Type', "application/json; charset=utf-8")
             .expect(400)
             .end(function (err, res) {
