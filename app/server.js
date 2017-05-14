@@ -15,13 +15,11 @@ module.exports = function (app) {
             });
 
             let bodyParser = require('body-parser')
-            require('./kanji/kanjiRoute')(app);
             app.use(bodyParser.json());
             app.use(bodyParser.urlencoded({ extended: true }));
             app.use(bodyParser.text());
             app.use(bodyParser.json({ type: 'application/json' }));
-
-
+            require('./kanji/kanjiRoute')(app);
 
             app.get('/api', function (req, res) {
                 res.send('Server Running');
